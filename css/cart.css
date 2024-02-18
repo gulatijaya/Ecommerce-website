@@ -1,0 +1,81 @@
+/* .card{
+    margin: auto;
+    max-width: 1000px;
+    width:90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent;
+} */
+
+.main{
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+img{
+    width: 4.5rem;
+}
+select{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding:10px;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+.text-box{
+    width:100%;
+    background-color: transparent;
+    background-color: rgb(247, 247, 247);
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding:10px;
+    outline: none;
+    /* border:none; */
+}
+.qty{
+    width:30px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    border:1px solid #333;
+    font-size:18px;
+    color:#333
+}
+/* .btn{
+    background-color:blue;
+    border:none;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    
+    padding: 15px;
+    border-radius: 0;
+} */
+.card-right{
+        background-color: #ddd;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        padding: 4vh;
+        color: rgb(65, 65, 65);
+
+}
+.btnminus{
+    /* border:none; */
+    border-radius:5px;
+    border:1px solid #ddd;
+    width:30px;
+    text-align: center;
+    color:#000;
+    font-size:18px;
+
+}
+.btnplus{
+    border:none;
+    border-radius:5px;
+    border:1px solid #ddd;
+    width:30px;
+    text-align: center;
+    color:#000;
+    font-size:18px;
+
+}
