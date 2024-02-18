@@ -1,2 +1,2 @@
 # Ecommerce-website
-![ecommerce-site](https://github.com/gulatijaya/Ecommerce-website/assets/109244577/d3da261d-232f-4ccb-935b-bfcba0451be8)
+![ecommerce-site1](https://github.com/gulatijaya/Ecommerce-website/assets/109244577/d533ef97-30ac-46c0-a87c-b18ed9481eb6)
