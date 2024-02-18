@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!------------------- Bootstrap link ------------------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!----------------- iconify icons ----------------------->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!----------------- slick slider ------------------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous">
+
+    <!------------------ jquery link -------------------------->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+    <!------------------ Custom CSS --------------------------->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+    <!--------------------- Start header ------------------------->
+    <header class="nav-head">
+        <div class="container">
+            <nav class="navbar d-flex justify-content-between align-items-center navbar-expand-lg">
+                <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class='bx bx-menu '></i>
+
+                </button>
+                <a class="navbar-brand" href="#">Fashion</a>
+
+                <div class="navbarnav d-inline-flex">
+                    <ul class="navbar-nav  d-sm-none d-md-none d-lg-inline-flex d-none">
+                        <li class="nav-item ">
+                            <a class="nav-link active" onclick="home()" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/shop1.html" onclick="shop()" id="shop">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="about()" id="about1">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#" onclick="contact()" id="contact1">Contact</a>
+                        </li>
+                    </ul>
+
+                    <ul
+                        class="navbar-nav navbar-icon d-md-inline-flex d-sm-inline-flex d-inline-flex align-items-center">
+
+                        <li class="nav-item nav-link align-items-center" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Search">
+                            <iconify-icon icon="tdesign:search" width="24" height="24" data-bs-toggle="modal"
+                                data-bs-target="#searchmodal"></iconify-icon>
+
+
+                        </li>
+                        <li class="nav-item nav-link dropdown d-md-block d-sm-block d-none" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Account">
+                            <iconify-icon icon="octicon:person-24" width="25" height="25" class="dropdown-toggle"
+                                type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                aria-expanded="false"></iconify-icon>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+                                <li><button class="dropdown-item" href="#" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#loginModal">Login</button></li>
+                                <li><button class="dropdown-item" href="#" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#signupModal">SignUp</button></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item nav-link align-items-center" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" title="Cart">
+                            <iconify-icon icon="bxs:cart" width="25" height="25" class="cart" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+
+                            </iconify-icon>
+                            <span class=" badge rounded-pill bg-danger" id="showcart">
+                                0
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+
+                                    <div class=" mb-3">
+
+                                        <label for="mail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="mail1">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pass" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="pass1">
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer border-top-0">
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button> -->
+                                <button type="button" class="btn addcart-btn allbtn m-auto ">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------------- signup modal ----------------------------->
+                <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">SignUp</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="firstname" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstname"
+                                            placeholder="Enter first name">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="lastname" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastname"
+                                            placeholder="Enter last name">
+
+                                    </div>
+                                    <div class=" mb-3">
+
+                                        <label for="mail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="mail">
+
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="pass" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="pass">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmpass" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="confirmpass">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer border-top-0">
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"></button> -->
+                                <button type="button" class="btn addcart-btn allbtn m-auto ">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cart modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="container">
+                                    <div class="row cart-table">
+                                        <div class="col-md-3 col-2">Product</div>
+                                        <div class="col-md-3 col-2">Quantity</div>
+                                        <div class="col-md-2 col-2">Price</div>
+                                        <div class="col-md-2 col-2">Total</div>
+                                        <div class="col-md-2 col-2 ps-4">Remove</div>
+                                    </div>
+                                </div>
+
+                                <div class="row cart-content " id="cart-content1"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--------------------- search modal ---------------------------->
+                <div class="modal fade" id="searchmodal" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="searchmodallabel" aria-hidden="true">
+                    <div class="modal-dialog modal-fullscreen">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="searchmodal">What are you looking for?</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="searchInput">
+                                    <input type="search" id="input-box" placeholder="Search Products...."
+                                        class="searchbox" autocomplete="off">
+                                    <div class="resultBox">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="offcanvas offcanvas-start bg-canvas" id="navbarOffcanvas" tabindex="-1"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title text-light" id="offcanvasNavbarLabel"></h5>
+                        <button type="button" class="btn-close  btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close">
+                            <iconify-icon icon="iconamoon:close-duotone" width="20" height="20"></iconify-icon>
+                        </button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                            <li class="nav-item ">
+                                <a class="nav-link " id="active" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="shop1.html">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Contact</a>
+                            </li>
+                            <li class="nav-item nav-link dropdown" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Account">
+                                <iconify-icon icon="octicon:person-24" width="25" height="25" class="dropdown-toggle"
+                                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                    aria-expanded="false"></iconify-icon>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+
+                                    <li><button class="dropdown-item" href="#" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#loginModal">Login</button></li>
+                                    <li><button class="dropdown-item" href="#" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#signupModal">SignUp</button></li>
+
+                                </ul>
+                            </li>
+
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!------------------------ End header ----------------------------->
+
+
+    <!------------------------ start main ------------------------------>
+    <section id="home">
+        <div class="banner-container">
+            <div class="banner-img">
+                <div class="container">
+                    <div class="banner-content">
+
+                        <div class="banner-title">
+                            <h1>Find Your New
+                                <br>Favorite Clothing
+                            </h1>
+                        </div>
+
+                        <div class="banner-para">
+                            <p>Here to bring your life style to the next level.</p>
+
+                        </div>
+
+                        <div class="banner-btn">
+                            <a href="shop1.html">
+                                <button class="shopbtn allbtn">Shop now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!---------------- Start Product items ------------------------>
+    <section class="mens-product mt-md-4">
+        <div class="container">
+            <div class="product py-md-5 py-4 text-center">
+                <h3>Trending <span> Men's Wear</span></h3>
+            </div>
+
+            <div class="row " id="card1">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="womens-product mt-md-4">
+        <div class="container">
+            <div class="product  py-md-5 py-4 text-center">
+                <h3>Trending <span> Women's Wear</span></h3>
+            </div>
+
+            <div class="row " id="card2">
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <!------------------------- End product items ---------------------->
+
+    <!------------------------ Start men women section ----------------->
+    <section class="section-container pt-lg-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 pt-md-4 pt-3">
+                    <div class="womensection">
+                        <img src="/images/womensection.jpg">
+
+                        <div class="section-content">
+                            <div class="content">
+                                <h2>COMPLETE YOUR LOOK</h2>
+                                <h2><span>Women's</span></h2>
+                                <p>Here to bring your life style to the next level.</p>
+                                <button class="shopbtn allbtn">Shop now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6  pt-md-4 pt-3">
+                    <div class="mensection">
+                        <img src="/images/mensection.jpg">
+                        <div class="section-content">
+                            <div class="content">
+                                <h2>COMPLETE YOUR LOOK</h2>
+                                <h2><span> Men's</span></h2>
+                                <p>Here to bring your life style to the next level.</p>
+                                <button class="shopbtn allbtn">Shop now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------------------- End men women section ----------------------->
+
+    <!--------------------- Start featured product ---------------------->
+    <section class="featured product mt-md-4">
+        <div class="container">
+            <div class="product py-md-5 py-4  text-center">
+                <h3>Featured <span> Product</span></h3>
+            </div>
+
+            <div class="row  slider " id="card3">
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <!------------------- End featured product --------------------------->
+
+
+    <!------------------ Start Customer review section ------------------->
+
+    <section class="customer-reviews mt-md-4">
+        <div class="container">
+            <div class="product py-md-5 py-4 text-center">
+                <h3>Customer <span> Review</span></h3>
+            </div>
+
+            <div class="row text-center slider">
+                <div class="col m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customerimg.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customerimg3.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customerimg4.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customer-img2.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col  m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customer-img2.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m-2 card customer">
+                    <div class="review text-center">
+                        <img src="/images/customerimg5.jpg">
+                        <div class="card-body">
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, et?
+                            </p>
+                            <div class="star mt-3 mb-3 ps-2">
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                                <iconify-icon icon="tabler:star-filled" width="20" height="20"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------- End customer review section ---------------------->
+
+    <!------------------------- Product Modal -------------------------------->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mdl-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------------------- End main --------------------------->
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/navscroll.js"></script>
+    <script src="./js/cartmodal-1.js"></script>
+    <script src="./js/productpage.js"></script>
+    <script src="./js/searchfilter.js"></script>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+</body>
+
+</html>
